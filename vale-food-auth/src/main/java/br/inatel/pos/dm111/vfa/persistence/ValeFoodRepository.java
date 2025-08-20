@@ -6,13 +6,14 @@ import java.util.concurrent.ExecutionException;
 
 public interface ValeFoodRepository<T> {
 
-    List<T> getAll() throws ExecutionException, InterruptedException;
+	List<T> getAll() throws ExecutionException, InterruptedException;
 
-    Optional<T> getById(String id) throws ExecutionException, InterruptedException;
+	Optional<T> getById(String id) throws ExecutionException, InterruptedException;
 
-    //Optional<T> getByUserId(String userId) throws ExecutionException, InterruptedException;
+	// Optional<T> getByUserId(String userId) throws ExecutionException,
+	// InterruptedException;
 
-    T save(T entity);
+	T save(T entity);
 
-    void delete(String id) throws ExecutionException, InterruptedException;
+	void delete(String id) throws ExecutionException, InterruptedException;
 }

@@ -10,7 +10,7 @@ import br.inatel.pos.dm111.vfp.persistence.promotion.Promotion;
 @Profile("test")
 @Component
 public class PromotionHttpPublisher implements AppPublisher {
-    @Value("${vale-food.user.url}")
+	@Value("${vale-food.user.url}")
 	private String userUrl;
 
 	@Value("${vale-food.restaurant.url}")
@@ -18,14 +18,12 @@ public class PromotionHttpPublisher implements AppPublisher {
 
 	private final RestTemplate restTemplate;
 
-    public PromotionHttpPublisher(RestTemplate restTemplate)
-	{
+	public PromotionHttpPublisher(RestTemplate restTemplate) {
 		this.restTemplate = restTemplate;
 	}
 
-    @Override
-	public boolean publishCreated(Promotion promotion)
-	{
+	@Override
+	public boolean publishCreated(Promotion promotion) {
 		var event = buildEvent(promotion, Event.EventType.ADDED);
 		restTemplate.postForObject(userUrl, event.event(), PromotionEvent.class);
 		restTemplate.postForObject(restaurantUrl, event.event(), PromotionEvent.class);

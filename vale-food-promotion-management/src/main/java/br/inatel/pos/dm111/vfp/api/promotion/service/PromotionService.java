@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PromotionService {
 
-    private static final Logger log = LoggerFactory.getLogger(PromotionService.class);
+	private static final Logger log = LoggerFactory.getLogger(PromotionService.class);
 
 	// private final PromotionRepository promotionRepository;
-	
+
 	public PromotionService() {
 		// TODO Auto-generated constructor stub
 	}
-    
+
 }

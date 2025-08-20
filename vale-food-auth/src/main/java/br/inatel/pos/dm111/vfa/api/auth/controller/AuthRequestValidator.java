@@ -1,6 +1,7 @@
 package br.inatel.pos.dm111.vfa.api.auth.controller;
 
 import br.inatel.pos.dm111.vfa.api.auth.AuthRequest;
+
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;

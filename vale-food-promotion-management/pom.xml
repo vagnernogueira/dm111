@@ -9,10 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.inatel.pos.dm111</groupId>
-	<artifactId>vale-food-user-management</artifactId>
+	<artifactId>vale-food-promotion-management</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>vale-food-user-management</name>
-	<description>Demo project for Spring Boot</description>
+	<name>vale-food-promotion-management</name>
 	<url/>
 	<licenses>
 		<license/>

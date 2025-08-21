@@ -47,34 +47,22 @@ mvn package -DskipTests
 
 ---
 
-### 2 - Execution
+### Execution
 
 ```bash
 
 java -jar .\vale-food-auth\target\vale-food-auth-0.0.1-SNAPSHOT.jar
 
 
-```<br>
-
-```bash
-
 java -jar .\vale-food-promotion-management\target\vale-food-promotion-management-0.0.1-SNAPSHOT.jar
 
-
-```<br>
-
-```bash
 
 java -jar .\vale-food-restaurant-management\target\vale-food-restaurant-management-0.0.1-SNAPSHOT.jar
 
 
-```<br>
-
-```bash
-
 java -jar .\vale-food-user-management\target\vale-food-user-management-0.0.1-SNAPSHOT.jar
 
 
-```<br>
+```
 
 ---

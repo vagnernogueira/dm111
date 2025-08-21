@@ -28,6 +28,6 @@ public class UserService {
 	}
 
 	private User buildUser(UserRequest request) {
-		return new User(request.id(), request.name(), request.email(), null, User.UserType.valueOf(request.type()));
+		return new User(request.id(), request.name(), request.email(), null, User.UserType.valueOf(request.type()), request.preferredCategories());
 	}
 }

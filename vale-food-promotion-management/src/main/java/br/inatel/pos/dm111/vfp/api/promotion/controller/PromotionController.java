@@ -35,14 +35,14 @@ public class PromotionController {
 		this.validator = validator;
 	}
 
-	@GetMapping
+	@GetMapping(value = "/user")
 	public ResponseEntity<List<PromotionResponse>> getAllPromotions() throws ApiException {
 		log.debug("Received request to list all promotions.");
 		var response = service.searchPromotions();
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 
-	@GetMapping(value = "/{userId}")
+	@GetMapping(value = "/user/{userId}")
 	public ResponseEntity<List<PromotionResponse>> getAllPromotions(@PathVariable("userId") String userId)
 			throws ApiException {
 		log.debug("Received request to list all promotions by user.");
@@ -50,7 +50,7 @@ public class PromotionController {
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 
-	@PostMapping
+	@PostMapping(value = "/restaurant")
 	public ResponseEntity<PromotionResponse> postPromotion(@RequestBody PromotionRequest request,
 			BindingResult bindingResult) throws ApiException {
 		log.debug("Received request to create a new promotion...");
@@ -59,7 +59,7 @@ public class PromotionController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 	}
 
-	@GetMapping(value = "/{userId}/{restaurantId}")
+	@GetMapping(value = "/restaurant/{userId}/{restaurantId}")
 	public ResponseEntity<List<PromotionResponse>> getPromotionsByRestaurant(@PathVariable("userId") String userId,
 			@PathVariable("restaurantId") String restaurantId) throws ApiException {
 		log.debug("Received request to list promotions by restaurant.");
@@ -67,7 +67,7 @@ public class PromotionController {
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 
-	@GetMapping(value = "/{userId}/{promotionId}")
+	@GetMapping(value = "/restaurant/{userId}/{promotionId}")
 	public ResponseEntity<PromotionResponse> getPromotion(@PathVariable("userId") String userId,
 			@PathVariable("promotionId") String promotionId) throws ApiException {
 		log.debug("Received request to list promotions by restaurant.");
@@ -75,7 +75,7 @@ public class PromotionController {
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 
-	@PutMapping(value = "/{promotionId}")
+	@PutMapping(value = "/restaurant/{promotionId}")
 	public ResponseEntity<PromotionResponse> putPromotion(@RequestBody PromotionRequest request,
 			@PathVariable("promotionId") String promotionId, BindingResult bindingResult) throws ApiException {
 		log.debug("Received request to update a promotion...");
@@ -84,7 +84,7 @@ public class PromotionController {
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 
-	@DeleteMapping(value = "/{userId}/{promotionId}")
+	@DeleteMapping(value = "/restaurant/{userId}/{promotionId}")
 	public ResponseEntity<List<PromotionResponse>> deleteRestaurant(@PathVariable("userId") String userId,
 			@PathVariable("promotionId") String promotionId) throws ApiException {
 		log.debug("Received request to delete an restaurant: id {}", promotionId);

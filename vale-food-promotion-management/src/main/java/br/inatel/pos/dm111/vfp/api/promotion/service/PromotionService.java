@@ -116,18 +116,18 @@ public class PromotionService {
 		}
 	}
 
-	public void removePromotion(String id, String userId) throws ApiException {
+	public void removePromotion(String promotionId, String userId) throws ApiException {
 		validateUser(userId);
-		var promotionOpt = retrievePromotionById(id);
+		var promotionOpt = retrievePromotionById(promotionId);
 		if (promotionOpt.isPresent()) {
 			try {
-				promotionRepository.delete(id);
+				promotionRepository.delete(promotionId);
 			} catch (ExecutionException | InterruptedException e) {
-				log.error("Failed to delete a promotion from DB by id {}.", id, e);
+				log.error("Failed to delete a promotion from DB by id {}.", promotionId, e);
 				throw new ApiException(AppErrorCode.INTERNAL_DATABASE_COMMUNICATION_ERROR);
 			}
 		} else {
-			log.info("The provided promotion id was not found. id: {}", id);
+			log.info("The provided promotion id was not found. id: {}", promotionId);
 		}
 	}
 

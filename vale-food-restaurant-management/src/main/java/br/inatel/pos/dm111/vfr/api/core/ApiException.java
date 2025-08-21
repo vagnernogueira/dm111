@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 
 public class ApiException extends Exception {
 
+	private static final long serialVersionUID = 7337071561639390769L;
 	private final HttpStatus status;
 	private final List<AppError> errors;
 
